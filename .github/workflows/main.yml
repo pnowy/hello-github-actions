@@ -16,4 +16,4 @@ jobs:
           MIDDLE_NAME: The
           LAST_NAME: Octocat
         run: |
-          curl -X POST -F token=${{ secrets.WEBHOOK_TOKEN }} -F "ref=master" -F "variables[IMAGE_TAG]=latest"  ${{ secrets.WEBHOOK_URL }}
+          curl -s -o /dev/null -w "%{http_code}" -X POST -F token=${{ secrets.WEBHOOK_TOKEN }} -F "ref=master" -F "variables[IMAGE_TAG]=latest"  ${{ secrets.WEBHOOK_URL }}
