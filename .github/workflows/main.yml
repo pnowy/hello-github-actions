@@ -5,15 +5,15 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest    
     steps:
-    - uses: actions/checkout@master
-    - uses: ./action-a
-      env:
-        MY_NAME: "Mona"
-    - name: greeting
+      # - uses: actions/checkout@master
+      # - uses: ./action-a
+      #   env:
+      #     MY_NAME: "Mona"
+      - name: greeting
         env:
           MY_VAR: Hi there! My name is
           FIRST_NAME: Mona
           MIDDLE_NAME: The
           LAST_NAME: Octocat
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+            echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
